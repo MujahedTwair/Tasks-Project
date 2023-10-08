@@ -1,0 +1,403 @@
+body{
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5bb0ff;
+    font-family: sans-serif;
+}
+
+.main{
+    /* position: relative; */
+    height: 500px;
+    width: 25%;   
+}
+@media  (max-width: 992px)  {
+    .main{
+        width: 60%;
+    } 
+}
+@media  (max-width: 620px)  {
+    .main{
+        width: 80%;
+    } 
+}
+@media (max-width: 576px){
+    .main{
+        width: 95%;
+    } 
+}
+ .inner-main{
+    /* border-radius: 10px;
+    padding: 20px; 
+    background-color: white;
+    height: 460px;
+    background-clip: padding-box; */
+    /* position: absolute;
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    bottom: 10px; */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 15px 20px 25px -13px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 15px 20px 25px -13px rgba(0,0,0,0.41);
+    -moz-box-shadow: 15px 20px 25px -13px rgba(0,0,0,0.41);
+    /* padding: 20px; */
+    /* text-align: center; */
+    /* overflow-y: scroll; */
+} 
+::-webkit-scrollbar-track {
+    background: none;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 5px;
+}
+.clear-btn{
+    font-size: 1rem;
+    border: none;
+    color: white;
+    /* background-color:#2b5f8f ; */
+    background: linear-gradient(90deg, rgba(88,175,249,1) 28%, rgba(76,124,255,1) 100%);
+
+    border-radius: .25rem;
+    padding: .5rem;
+}
+.clear-btn:hover{
+    cursor: pointer;
+    opacity: .8;
+    transition: .2s;
+}
+.tap {
+    background-color: #fff;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    padding: .5rem;
+}
+.tap:hover{
+    color: #5bb0ff;
+    cursor: pointer;
+    transition: color .3s ;
+}
+/* .clicked-tap{
+    background-color: #fff;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.5rem;
+    font-weight: bold !important;
+    color: #5bb0ff !important;
+}
+.clicked-tap::after{
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #5bb0ff;
+    top: 0px;
+    left: 0px;
+} */
+/* ---------------------------------------------------------------------------- */
+.taps{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin: 0;
+    padding: 0;
+    padding-top:1.5rem ;    
+}
+
+.taps li:nth-child(4){
+    margin-inline-start: auto;
+}
+.header{
+    padding: 1.5rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+#task-input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.7rem;
+    border-radius: 5px;
+    border: 1px solid #838181;
+    font-family: Arial, FontAwesome
+}
+#task-input:focus{
+    outline:2px solid #5bb0ff ; 
+}
+/* -------------------------------------------------------------------------------- */
+.main-content{
+    padding: 1rem 1.5rem 0 1.5rem;
+    border-bottom: 1px solid #ccc;
+}
+.tasks-ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+.tasks-ul .ul-li{
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+}
+.tasks-ul .ul-li:last-child{
+    border-bottom: 0px solid ;
+}
+.tasks-ul [type = "checkbox"]{
+    font-family: system-ui, sans-serif;
+}
+.tasks-ul .ul-li{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+}
+
+.tasks-ul .ul-li i.options-icon{
+    padding-inline-end: 5px;
+    margin-inline-start:auto ;
+    cursor: pointer;
+    position: relative;
+}
+.tasks-ul .ul-li i.options-icon::after{
+    content: "";
+    position: absolute;
+    display: none;
+    left: -6px;
+    top: 0px;
+    width: 21px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    border-width: 3px 3px 3px 3px;
+    background-color: #ccc;
+    opacity: 0.3;
+}
+.tasks-ul .ul-li i:hover::after{
+    display: block;
+}
+/* custom checkbox -------------- */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: .8rem;
+    width: .8rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+.container input:checked ~ .title {
+    text-decoration: line-through;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    
+    left: 3.5px;
+    top: 2px;
+    width: 3px;
+    height: 5px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.container input:checked+.checkmark:after {
+    display: block;
+}
+
+/* .container .checkmark:after {
+ 
+} */
+
+.space{
+    height: 2rem;
+}
+/* add button */
+.input-container{
+    position: relative;
+}
+#add-btn{
+    margin-inline-start: auto;
+    position: absolute;
+    right: 3px;
+    top: 4px;
+    display: none;
+    padding: .4rem;
+}
+
+/* ============================================================================================================== */
+/* context menu */
+#contextMenu { 
+    display: none;
+    visibility: hidden;
+    position: absolute; 
+    opacity: 0 ;
+    /* transition: opacity 1s ease 0s; */
+  } 
+  @keyframes show {
+    from {
+        visibility: hidden;
+        opacity: 0;
+    }
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
+    
+}
+@keyframes hide {
+    from {
+        visibility: visible;
+        opacity: 1;
+    }
+    to {
+        visibility: hidden;
+        opacity: 0;
+    }
+    
+}
+  .menu {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 1px 9px 4px rgb(14 78 131 / 61%);
+    padding: 5px 0;
+    position: relative;
+    z-index: 10;
+    font-size: .8rem;
+    
+  }
+  .menu > li > a {
+    font: inherit;
+    border: 0;
+    padding: 5px 30px 5px 10px;
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: unset;
+    color: #000;
+    font-weight: 500;
+    transition: 0.25s linear;
+    -webkit-transition: 0.25s linear;
+    -moz-transition: 0.25s linear;
+    -ms-transition: 0.25s linear;
+    -o-transition: 0.25s linear;
+    
+  }
+  .menu > li.complete > a:hover {
+    background:#f1f3f7;
+    color: #1b8f20;
+  }
+  .menu > li.delete > a:hover {
+    background:#f1f3f7;
+    color: #8f1b1b;
+  }
+  .menu > li > a > i {
+    padding-right: 10px;
+  }
+  .menu > li.complete > a > i {
+    padding-right: 8px;
+  }
+  .menu .complete{
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* =-======================== */
+  .hide{
+    /* display: none !important; */
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s;
+    height: 0;
+    padding: 0 !important;
+  }
+  
+  .hide-border-bottom{
+    border-bottom: none !important;
+  }
+
+  /* ============================================= */
+  .active-tap{
+    font-weight: bold;
+    color: #5091d1;
+    border-bottom: 2px solid #5091d1;
+    padding-bottom: 5px;
+    margin-bottom: 2px;
+  }
+
+  /* ========================= */
+ .light-opacity{
+    padding-right: .5rem ;
+    opacity: 0.8;
+ }
+ .light-opacity:hover{
+    cursor: pointer;
+ }
+
+ /* ================================== */
+
+ .ul-li.dragging {
+    opacity: .4;
+    background-color: #a7a5a5;
+  }
+  .ul-li.dragging :where(.container, i) {
+    opacity: 0;
+  }
+
+  /* =================== */
+
+  #emptyDiv{
+    background-color: #f1f3f7;
+    /* margin: auto; */
+    /* width: 100%; */
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 2px;
+  }

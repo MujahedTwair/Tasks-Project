@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="vendors/css/all.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <title>Task Note</title>
+    <link rel="icon" type="image/png" href="assets/images/icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Task Note" />
+    <meta name="application-name" content="Task Note" />
+    <meta property="og:title" content="Task Note" />
+    <meta property="og:description" content="Description For Our Task Note" />
+    <meta property="og:image" content="assets/images/global-img.png" />
+    <meta property="og:image:alt" content="many tasks to add, delete and update" />
+    <meta name="description" content="Do your tasks and update" />
+</head>
+<body>
+    <main class="main">
+        <div class="inner-main">
+            <header>
+                <div class="header">
+                    <form action="" id="myform">
+                        <div class="input-container">
+                            <input type="text" placeholder=" Add a new task" id="task-input" />
+                            <button class="clear-btn" id="add-btn">Add</button>
+                        </div>
+                        <ul class="taps" id="taps">
+                            <li><button class="tap active-tap" id="all-tab">All</button></li>
+                            <li><button class="tap" id="pending-tab">Pending</button></li>
+                            <li><button class="tap" id="completed" >Completed</button></li>
+                            <li><button type="reset" class="clear-btn" id="clear-btn">Clear All</button></li>
+                        </ul>
+                    </form>
+                </div>
+            </header>
+            <main>
+                <div class="main-content">
+                    <div id="contextMenu" class="context-menu"> 
+                        <ul class="menu"> 
+                            <li class="complete"><a href="#" id = "complete"><i class="fa-solid fa-check" aria-hidden="true"></i>Complete</a></li> 
+                            <li class="delete"><a href="#" id="delete"><i class="fa-solid fa-trash" aria-hidden="true"></i> Delete</a></li> 
+                        </ul> 
+                    </div> 
+                    <ul class="tasks-ul" id="tasks-ul">
+                        <div id="emptyDiv" style="display: none;">
+                            There is no tasks yet...
+                        </div>
+                        <!-- <li class="ul-li">
+                            <label class ="container">
+                                <input type="checkbox" form="myform" id="task1" class="checkbox" />
+                                <span class="checkmark"></span>
+                                <div class="title">Renew gym mempership</div>
+                            </label>
+                            
+                            <i class="fa-solid fa-ellipsis options-icon" data-id="task1"></i>    
+                        </li>
+                        <li class="ul-li">
+                            <label class ="container">
+                                <input type="checkbox" form="myform" id="task2" class="checkbox" checked>
+                                <span class="checkmark"></span>
+                                <div class="title">Create a video for YouTube</div>
+                            </label>
+                            <i class="fa-solid fa-ellipsis options-icon" data-id="task2"></i>    
+                        </li>
+                        <li class="ul-li">
+                            <label class ="container">
+                                <input type="checkbox" form="myform" id="task3" class="checkbox" />
+                                <span class="checkmark"></span>
+                                <div class="title">Write a blog about new trends</div>
+                            </label>
+                            <i class="fa-solid fa-ellipsis options-icon" data-id="task3"></i>    
+                        </li>
+                        <li class="ul-li">
+                            <label class ="container">
+                                <input type="checkbox" form="myform" id="task4" class="checkbox" />
+                                <span class="checkmark"></span>
+                                <div class="title">Send project file to the client</div>
+                            </label>
+                            <i class="fa-solid fa-ellipsis options-icon" data-id="task4"></i>    
+                        </li>
+                        <li class="ul-li">
+                            <label class ="container">
+                                <input type="checkbox" form="myform" id="task5" class="checkbox" />
+                                <span class="checkmark"></span>
+                                <div class="title">Discuss new project with team</div>
+                            </label>
+                            <i class="fa-solid fa-ellipsis options-icon" data-id="task5"></i>    
+                        </li> -->
+                        
+                    </ul>
+    
+                </div>
+            </main>
+            <footer>
+                <div class="space"></div>
+            </footer>
+        </div>
+        
+    </main>
+
+    <script  src="assets/js/state.js"></script>
+</body>
